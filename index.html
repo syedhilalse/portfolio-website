@@ -1,450 +1,1238 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Syed Hilal Jan – Software Engineer</title>
-<meta name="description" content="Syed Hilal Jan – Full-Stack Software Engineer with 3+ years of experience in React, Flutter, Laravel, and cloud services. Based in Pakistan.">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --bg: #0d0d12;
-    --surface: #13131a;
-    --card: #1a1a24;
-    --card-hover: #1e1e2c;
-    --border: #ffffff0d;
-    --border-hover: #ffffff1a;
-    --accent: #4ade80;
-    --accent-dim: #4ade8020;
-    --accent2: #7c86ff;
-    --accent2-dim: #7c86ff18;
-    --text: #f0f0f5;
-    --text-secondary: #9898aa;
-    --text-muted: #55556a;
-    --tag-bg: #ffffff08;
-  }
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    line-height: 1.6;
-    overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
-  }
-  .container { max-width: 1040px; margin: 0 auto; padding: 0 2rem; }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Syed Hilal Jan – Software Engineer</title>
+    <meta
+      name="description"
+      content="Syed Hilal Jan – Full-Stack Software Engineer with 3+ years of experience in React, Flutter, Laravel, and cloud services. Based in Pakistan."
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #0d0d12;
+        --surface: #13131a;
+        --card: #1a1a24;
+        --card-hover: #1e1e2c;
+        --border: #ffffff0d;
+        --border-hover: #ffffff1a;
+        --accent: #4ade80;
+        --accent-dim: #4ade8020;
+        --accent2: #7c86ff;
+        --accent2-dim: #7c86ff18;
+        --text: #f0f0f5;
+        --text-secondary: #9898aa;
+        --text-muted: #55556a;
+        --tag-bg: #ffffff08;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Inter", sans-serif;
+        font-weight: 400;
+        line-height: 1.6;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+      .container {
+        max-width: 1040px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
 
-  /* NAV */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: #0d0d12e8; backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--border);
-  }
-  .nav-inner {
-    max-width: 1040px; margin: 0 auto; padding: 0 2rem;
-    height: 60px; display: flex; align-items: center; justify-content: space-between;
-  }
-  .nav-logo { font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; font-weight: 500; color: var(--accent); letter-spacing: 0.05em; }
-  .nav-links { display: flex; gap: 0.25rem; list-style: none; }
-  .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.82rem; font-weight: 500; padding: 0.4rem 0.8rem; border-radius: 6px; transition: color 0.15s, background 0.15s; }
-  .nav-links a:hover { color: var(--text); background: var(--card); }
+      /* NAV */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        background: #0d0d12e8;
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid var(--border);
+      }
+      .nav-inner {
+        max-width: 1040px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .nav-logo {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: var(--accent);
+        letter-spacing: 0.05em;
+      }
+      .nav-links {
+        display: flex;
+        gap: 0.25rem;
+        list-style: none;
+      }
+      .nav-links a {
+        color: var(--text-secondary);
+        text-decoration: none;
+        font-size: 0.82rem;
+        font-weight: 500;
+        padding: 0.4rem 0.8rem;
+        border-radius: 6px;
+        transition:
+          color 0.15s,
+          background 0.15s;
+      }
+      .nav-links a:hover {
+        color: var(--text);
+        background: var(--card);
+      }
 
-  /* HERO */
-  .hero { padding: 120px 0 72px; }
-  .hero-inner { display: grid; grid-template-columns: 1fr auto; gap: 4rem; align-items: center; }
-  .hero-badge {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    font-family: 'JetBrains Mono', monospace; font-size: 0.72rem;
-    color: var(--accent); background: var(--accent-dim);
-    border: 1px solid #4ade8030; padding: 0.3rem 0.75rem; border-radius: 20px;
-    margin-bottom: 1.2rem; letter-spacing: 0.04em;
-  }
-  .hero-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); animation: blink 2s ease-in-out infinite; }
-  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
-  .hero h1 { font-size: clamp(2.2rem, 4vw, 3rem); font-weight: 700; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 0.5rem; }
-  .hero h1 .role { display: block; font-size: clamp(1rem, 2vw, 1.15rem); font-weight: 500; color: var(--accent2); letter-spacing: 0; margin-top: 0.4rem; }
-  .hero-bio { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.75; margin-top: 1rem; max-width: 520px; }
-  .hero-meta { display: flex; flex-wrap: wrap; gap: 1.2rem; margin-top: 1.5rem; }
-  .hero-meta-item { display: flex; align-items: center; gap: 0.4rem; font-size: 0.8rem; color: var(--text-secondary); font-family: 'JetBrains Mono', monospace; }
-  .hero-meta-item svg { opacity: 0.5; flex-shrink: 0; }
-  .hero-actions { display: flex; gap: 0.75rem; margin-top: 2rem; flex-wrap: wrap; }
+      /* HERO */
+      .hero {
+        padding: 120px 0 72px;
+      }
+      .hero-inner {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 4rem;
+        align-items: center;
+      }
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.72rem;
+        color: var(--accent);
+        background: var(--accent-dim);
+        border: 1px solid #4ade8030;
+        padding: 0.3rem 0.75rem;
+        border-radius: 20px;
+        margin-bottom: 1.2rem;
+        letter-spacing: 0.04em;
+      }
+      .hero-badge-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--accent);
+        animation: blink 2s ease-in-out infinite;
+      }
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.3;
+        }
+      }
+      .hero h1 {
+        font-size: clamp(2.2rem, 4vw, 3rem);
+        font-weight: 700;
+        line-height: 1.15;
+        letter-spacing: -0.03em;
+        margin-bottom: 0.5rem;
+      }
+      .hero h1 .role {
+        display: block;
+        font-size: clamp(1rem, 2vw, 1.15rem);
+        font-weight: 500;
+        color: var(--accent2);
+        letter-spacing: 0;
+        margin-top: 0.4rem;
+      }
+      .hero-bio {
+        font-size: 0.95rem;
+        color: var(--text-secondary);
+        line-height: 1.75;
+        margin-top: 1rem;
+        max-width: 520px;
+      }
+      .hero-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.2rem;
+        margin-top: 1.5rem;
+      }
+      .hero-meta-item {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: 0.8rem;
+        color: var(--text-secondary);
+        font-family: "JetBrains Mono", monospace;
+      }
+      .hero-meta-item svg {
+        opacity: 0.5;
+        flex-shrink: 0;
+      }
+      .hero-actions {
+        display: flex;
+        gap: 0.75rem;
+        margin-top: 2rem;
+        flex-wrap: wrap;
+      }
 
-  /* PHOTO */
-  .hero-photo {
-    width: 190px; height: 190px; border-radius: 16px;
-    background: var(--card); border: 1px solid var(--border-hover);
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    gap: 0.7rem; color: var(--text-muted); font-size: 0.72rem;
-    font-family: 'JetBrains Mono', monospace; position: relative; overflow: hidden; flex-shrink: 0;
-  }
-  .hero-photo::before { content:''; position:absolute; inset:0; background: radial-gradient(circle at 50% 30%, #7c86ff12, transparent 70%); }
-  .hero-photo-icon { width:64px; height:64px; border-radius:50%; background:var(--surface); border:2px dashed var(--border-hover); display:flex; align-items:center; justify-content:center; font-size:1.6rem; position:relative; }
+      /* PHOTO */
+      .hero-photo {
+        width: 190px;
+        height: 190px;
+        border-radius: 16px;
+        border: 2px solid var(--border-hover);
+        overflow: hidden;
+        flex-shrink: 0;
+        position: relative;
+      }
+      .hero-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+        display: block;
+      }
+      .hero-photo::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, #7c86ff10, transparent 60%);
+        pointer-events: none;
+      }
+      /* BUTTONS */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.6rem 1.3rem;
+        font-family: "Inter", sans-serif;
+        font-size: 0.82rem;
+        font-weight: 500;
+        border-radius: 8px;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+        transition: all 0.15s;
+        white-space: nowrap;
+      }
+      .btn-primary {
+        background: var(--accent);
+        color: #0d0d12;
+      }
+      .btn-primary:hover {
+        background: #6ee7a0;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 16px #4ade8030;
+      }
+      .btn-outline {
+        background: transparent;
+        color: var(--text-secondary);
+        border: 1px solid var(--border-hover);
+      }
+      .btn-outline:hover {
+        border-color: var(--text-secondary);
+        color: var(--text);
+        transform: translateY(-1px);
+      }
 
-  /* BUTTONS */
-  .btn { display:inline-flex; align-items:center; gap:0.5rem; padding:0.6rem 1.3rem; font-family:'Inter',sans-serif; font-size:0.82rem; font-weight:500; border-radius:8px; text-decoration:none; border:none; cursor:pointer; transition:all 0.15s; white-space:nowrap; }
-  .btn-primary { background:var(--accent); color:#0d0d12; }
-  .btn-primary:hover { background:#6ee7a0; transform:translateY(-1px); box-shadow:0 4px 16px #4ade8030; }
-  .btn-outline { background:transparent; color:var(--text-secondary); border:1px solid var(--border-hover); }
-  .btn-outline:hover { border-color:var(--text-secondary); color:var(--text); transform:translateY(-1px); }
+      /* SECTION */
+      section {
+        padding: 72px 0;
+        border-top: 1px solid var(--border);
+      }
+      .section-header {
+        display: flex;
+        align-items: baseline;
+        gap: 1rem;
+        margin-bottom: 2.5rem;
+      }
+      .section-num {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.7rem;
+        color: var(--accent);
+        letter-spacing: 0.1em;
+      }
+      .section-title {
+        font-size: 1.3rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        color: var(--text);
+      }
 
-  /* SECTION */
-  section { padding: 72px 0; border-top: 1px solid var(--border); }
-  .section-header { display:flex; align-items:baseline; gap:1rem; margin-bottom:2.5rem; }
-  .section-num { font-family:'JetBrains Mono',monospace; font-size:0.7rem; color:var(--accent); letter-spacing:0.1em; }
-  .section-title { font-size:1.3rem; font-weight:700; letter-spacing:-0.02em; color:var(--text); }
+      /* STATS */
+      .stats-row {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1px;
+        background: var(--border);
+        border-radius: 12px;
+        overflow: hidden;
+      }
+      .stat {
+        background: var(--card);
+        padding: 1.5rem;
+        text-align: center;
+      }
+      .stat-num {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--accent);
+        letter-spacing: -0.03em;
+        font-family: "JetBrains Mono", monospace;
+      }
+      .stat-label {
+        font-size: 0.75rem;
+        color: var(--text-secondary);
+        margin-top: 0.2rem;
+      }
 
-  /* STATS */
-  .stats-row { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--border); border-radius:12px; overflow:hidden; }
-  .stat { background:var(--card); padding:1.5rem; text-align:center; }
-  .stat-num { font-size:1.8rem; font-weight:700; color:var(--accent); letter-spacing:-0.03em; font-family:'JetBrains Mono',monospace; }
-  .stat-label { font-size:0.75rem; color:var(--text-secondary); margin-top:0.2rem; }
+      /* EXPERIENCE */
+      .exp-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .exp-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 1.75rem;
+        transition:
+          border-color 0.2s,
+          background 0.2s;
+      }
+      .exp-card:hover {
+        border-color: var(--border-hover);
+        background: var(--card-hover);
+      }
+      .exp-card-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-bottom: 1rem;
+        flex-wrap: wrap;
+      }
+      .exp-role {
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--text);
+        letter-spacing: -0.01em;
+      }
+      .exp-company {
+        font-size: 0.85rem;
+        color: var(--accent2);
+        font-weight: 500;
+        margin-top: 0.2rem;
+      }
+      .exp-period {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.72rem;
+        color: var(--text-muted);
+        background: var(--tag-bg);
+        border: 1px solid var(--border);
+        padding: 0.25rem 0.65rem;
+        border-radius: 6px;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+      .exp-bullets {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.45rem;
+      }
+      .exp-bullets li {
+        font-size: 0.875rem;
+        color: var(--text-secondary);
+        padding-left: 1rem;
+        position: relative;
+      }
+      .exp-bullets li::before {
+        content: "–";
+        position: absolute;
+        left: 0;
+        color: var(--text-muted);
+      }
+      .exp-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        margin-top: 1.2rem;
+      }
+      .tag {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.68rem;
+        color: var(--text-secondary);
+        background: var(--tag-bg);
+        border: 1px solid var(--border);
+        padding: 0.2rem 0.55rem;
+        border-radius: 4px;
+        letter-spacing: 0.02em;
+      }
 
-  /* EXPERIENCE */
-  .exp-list { display:flex; flex-direction:column; gap:1rem; }
-  .exp-card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:1.75rem; transition:border-color 0.2s, background 0.2s; }
-  .exp-card:hover { border-color:var(--border-hover); background:var(--card-hover); }
-  .exp-card-top { display:flex; justify-content:space-between; align-items:flex-start; gap:1rem; margin-bottom:1rem; flex-wrap:wrap; }
-  .exp-role { font-size:1rem; font-weight:600; color:var(--text); letter-spacing:-0.01em; }
-  .exp-company { font-size:0.85rem; color:var(--accent2); font-weight:500; margin-top:0.2rem; }
-  .exp-period { font-family:'JetBrains Mono',monospace; font-size:0.72rem; color:var(--text-muted); background:var(--tag-bg); border:1px solid var(--border); padding:0.25rem 0.65rem; border-radius:6px; white-space:nowrap; flex-shrink:0; }
-  .exp-bullets { list-style:none; display:flex; flex-direction:column; gap:0.45rem; }
-  .exp-bullets li { font-size:0.875rem; color:var(--text-secondary); padding-left:1rem; position:relative; }
-  .exp-bullets li::before { content:'–'; position:absolute; left:0; color:var(--text-muted); }
-  .exp-tags { display:flex; flex-wrap:wrap; gap:0.4rem; margin-top:1.2rem; }
-  .tag { font-family:'JetBrains Mono',monospace; font-size:0.68rem; color:var(--text-secondary); background:var(--tag-bg); border:1px solid var(--border); padding:0.2rem 0.55rem; border-radius:4px; letter-spacing:0.02em; }
+      /* PROJECTS */
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+      }
+      .project-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        transition:
+          border-color 0.2s,
+          transform 0.2s,
+          background 0.2s;
+        cursor: default;
+      }
+      .project-card:hover {
+        border-color: var(--accent2);
+        transform: translateY(-3px);
+        background: var(--card-hover);
+        box-shadow: 0 8px 32px #7c86ff10;
+      }
+      .project-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        background: var(--accent2-dim);
+        border: 1px solid #7c86ff20;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.1rem;
+      }
+      .project-name {
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: var(--text);
+        letter-spacing: -0.01em;
+      }
+      .project-desc {
+        font-size: 0.82rem;
+        color: var(--text-secondary);
+        line-height: 1.6;
+        flex: 1;
+      }
+      .project-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 0.8rem;
+        border-top: 1px solid var(--border);
+      }
+      .project-stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.3rem;
+      }
+      .project-link {
+        font-size: 0.75rem;
+        color: var(--accent2);
+        text-decoration: none;
+        font-family: "JetBrains Mono", monospace;
+        opacity: 0.7;
+        transition: opacity 0.15s;
+      }
+      .project-link:hover {
+        opacity: 1;
+      }
 
-  /* PROJECTS */
-  .projects-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
-  .project-card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:1.5rem; display:flex; flex-direction:column; gap:0.8rem; transition:border-color 0.2s, transform 0.2s, background 0.2s; cursor:default; }
-  .project-card:hover { border-color:var(--accent2); transform:translateY(-3px); background:var(--card-hover); box-shadow:0 8px 32px #7c86ff10; }
-  .project-icon { width:40px; height:40px; border-radius:10px; background:var(--accent2-dim); border:1px solid #7c86ff20; display:flex; align-items:center; justify-content:center; font-size:1.1rem; }
-  .project-name { font-size:0.95rem; font-weight:600; color:var(--text); letter-spacing:-0.01em; }
-  .project-desc { font-size:0.82rem; color:var(--text-secondary); line-height:1.6; flex:1; }
-  .project-footer { display:flex; align-items:center; justify-content:space-between; padding-top:0.8rem; border-top:1px solid var(--border); }
-  .project-stack { display:flex; flex-wrap:wrap; gap:0.3rem; }
-  .project-link { font-size:0.75rem; color:var(--accent2); text-decoration:none; font-family:'JetBrains Mono',monospace; opacity:0.7; transition:opacity 0.15s; }
-  .project-link:hover { opacity:1; }
+      /* SKILLS */
+      .skills-categories {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+      .skill-group {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 1.5rem;
+      }
+      .skill-group-title {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--text-secondary);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 1rem;
+      }
+      .skill-pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+      }
+      .skill-pill {
+        font-size: 0.78rem;
+        color: var(--text);
+        background: var(--tag-bg);
+        border: 1px solid var(--border-hover);
+        padding: 0.3rem 0.7rem;
+        border-radius: 6px;
+        transition:
+          border-color 0.15s,
+          color 0.15s;
+        cursor: default;
+      }
+      .skill-pill:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
 
-  /* SKILLS */
-  .skills-categories { display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; }
-  .skill-group { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:1.5rem; }
-  .skill-group-title { font-size:0.75rem; font-weight:600; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; }
-  .skill-pills { display:flex; flex-wrap:wrap; gap:0.4rem; }
-  .skill-pill { font-size:0.78rem; color:var(--text); background:var(--tag-bg); border:1px solid var(--border-hover); padding:0.3rem 0.7rem; border-radius:6px; transition:border-color 0.15s, color 0.15s; cursor:default; }
-  .skill-pill:hover { border-color:var(--accent); color:var(--accent); }
+      /* EDUCATION */
+      .edu-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 1.75rem;
+        display: flex;
+        gap: 1.5rem;
+        align-items: flex-start;
+        max-width: 680px;
+        transition: border-color 0.2s;
+      }
+      .edu-card:hover {
+        border-color: var(--accent);
+      }
+      .edu-badge {
+        width: 48px;
+        height: 48px;
+        border-radius: 10px;
+        background: var(--accent-dim);
+        border: 1px solid #4ade8025;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        flex-shrink: 0;
+      }
+      .edu-degree {
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--text);
+        letter-spacing: -0.01em;
+        margin-bottom: 0.25rem;
+      }
+      .edu-school {
+        font-size: 0.85rem;
+        color: var(--accent);
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+      }
+      .edu-meta {
+        font-size: 0.78rem;
+        color: var(--text-muted);
+        font-family: "JetBrains Mono", monospace;
+      }
 
-  /* EDUCATION */
-  .edu-card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:1.75rem; display:flex; gap:1.5rem; align-items:flex-start; max-width:680px; transition:border-color 0.2s; }
-  .edu-card:hover { border-color:var(--accent); }
-  .edu-badge { width:48px; height:48px; border-radius:10px; background:var(--accent-dim); border:1px solid #4ade8025; display:flex; align-items:center; justify-content:center; font-size:1.2rem; flex-shrink:0; }
-  .edu-degree { font-size:1rem; font-weight:600; color:var(--text); letter-spacing:-0.01em; margin-bottom:0.25rem; }
-  .edu-school { font-size:0.85rem; color:var(--accent); font-weight:500; margin-bottom:0.5rem; }
-  .edu-meta { font-size:0.78rem; color:var(--text-muted); font-family:'JetBrains Mono',monospace; }
+      /* CONTACT */
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: start;
+      }
+      .contact-text h2 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        line-height: 1.2;
+        margin-bottom: 0.8rem;
+      }
+      .contact-text h2 span {
+        color: var(--accent);
+      }
+      .contact-text p {
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+      }
+      .contact-links {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+      }
+      .contact-link {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        padding: 0.9rem 1.2rem;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        text-decoration: none;
+        color: var(--text-secondary);
+        font-size: 0.85rem;
+        transition: all 0.15s;
+      }
+      .contact-link:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+        transform: translateX(4px);
+      }
+      .contact-link-icon {
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        background: var(--tag-bg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.9rem;
+        flex-shrink: 0;
+      }
 
-  /* CONTACT */
-  .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:start; }
-  .contact-text h2 { font-size:1.8rem; font-weight:700; letter-spacing:-0.03em; line-height:1.2; margin-bottom:0.8rem; }
-  .contact-text h2 span { color:var(--accent); }
-  .contact-text p { font-size:0.9rem; color:var(--text-secondary); line-height:1.7; margin-bottom:1.5rem; }
-  .contact-links { display:flex; flex-direction:column; gap:0.6rem; }
-  .contact-link { display:flex; align-items:center; gap:0.8rem; padding:0.9rem 1.2rem; background:var(--card); border:1px solid var(--border); border-radius:10px; text-decoration:none; color:var(--text-secondary); font-size:0.85rem; transition:all 0.15s; }
-  .contact-link:hover { border-color:var(--accent); color:var(--accent); transform:translateX(4px); }
-  .contact-link-icon { width:32px; height:32px; border-radius:8px; background:var(--tag-bg); display:flex; align-items:center; justify-content:center; font-size:0.9rem; flex-shrink:0; }
+      /* FOOTER */
+      footer {
+        border-top: 1px solid var(--border);
+        padding: 1.5rem 2rem;
+        text-align: center;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.7rem;
+        color: var(--text-muted);
+        letter-spacing: 0.06em;
+      }
 
-  /* FOOTER */
-  footer { border-top:1px solid var(--border); padding:1.5rem 2rem; text-align:center; font-family:'JetBrains Mono',monospace; font-size:0.7rem; color:var(--text-muted); letter-spacing:0.06em; }
+      /* REVEAL */
+      .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition:
+          opacity 0.6s ease,
+          transform 0.6s ease;
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
 
-  /* REVEAL */
-  .reveal { opacity:0; transform:translateY(20px); transition:opacity 0.6s ease, transform 0.6s ease; }
-  .reveal.visible { opacity:1; transform:translateY(0); }
-
-  @media (max-width:768px) {
-    .nav-links { display:none; }
-    .hero-inner { grid-template-columns:1fr; }
-    .hero-photo { display:none; }
-    .stats-row { grid-template-columns:repeat(2,1fr); }
-    .projects-grid { grid-template-columns:1fr; }
-    .skills-categories { grid-template-columns:1fr; }
-    .contact-grid { grid-template-columns:1fr; }
-  }
-</style>
-</head>
-<body>
-
-<nav>
-  <div class="nav-inner">
-    <div class="nav-logo">syedhilal.dev</div>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </div>
-</nav>
-
-<!-- HERO -->
-<div class="container">
-  <div class="hero" id="about">
-    <div class="hero-inner">
-      <div>
-        <div class="hero-badge"><span class="hero-badge-dot"></span>Open to opportunities</div>
-        <h1>Syed Hilal Jan<span class="role">Full-Stack Software Engineer</span></h1>
-        <p class="hero-bio">Software Engineering graduate with 3+ years of experience building scalable web and mobile applications. Strong at translating business needs into technical solutions with a focus on performance, clean architecture, and timely delivery.</p>
-        <div class="hero-meta">
-          <span class="hero-meta-item">
-            <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-            Dir Lower, Pakistan
-          </span>
-          <span class="hero-meta-item">
-            <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-            syedhilal67@gmail.com
-          </span>
-          <span class="hero-meta-item">
-            <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-            (+92) 323 920 5787
-          </span>
-        </div>
-        <div class="hero-actions">
-          <a href="#contact" class="btn btn-primary">Get in Touch</a>
-          <a href="#experience" class="btn btn-outline">View Experience</a>
-        </div>
-      </div>
-      <div class="hero-photo">
-        <div class="hero-photo-icon">👤</div>
-        <span>Add your photo</span>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- STATS -->
-<div style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
-  <div class="container" style="padding:2.5rem 2rem;">
-    <div class="stats-row reveal">
-      <div class="stat"><div class="stat-num">3+</div><div class="stat-label">Years Experience</div></div>
-      <div class="stat"><div class="stat-num">3</div><div class="stat-label">Companies</div></div>
-      <div class="stat"><div class="stat-num">5+</div><div class="stat-label">Tech Stacks</div></div>
-      <div class="stat"><div class="stat-num">BSc</div><div class="stat-label">Degree</div></div>
-    </div>
-  </div>
-</div>
-
-<!-- EXPERIENCE -->
-<div class="container" id="experience">
-  <section>
-    <div class="section-header reveal">
-      <span class="section-num">01</span>
-      <h2 class="section-title">Work Experience</h2>
-    </div>
-    <div class="exp-list">
-      <div class="exp-card reveal">
-        <div class="exp-card-top">
-          <div><div class="exp-role">Software Engineer</div><div class="exp-company">Calypso Systems · Pakistan</div></div>
-          <span class="exp-period">Jan 2025 – Jan 2026</span>
-        </div>
-        <ul class="exp-bullets">
-          <li>Led development of full-stack applications, handling frontend, backend, and database layers.</li>
-          <li>Designed system architecture with a focus on performance, security, and scalability.</li>
-          <li>Integrated cloud services, third-party APIs, and analytics tools into applications.</li>
-          <li>Mentored junior developers and ensured adherence to coding standards and best practices.</li>
-          <li>Worked closely with product managers to deliver features aligned with user and business needs.</li>
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+        }
+        .hero-inner {
+          grid-template-columns: 1fr;
+        }
+        .hero-photo {
+          display: none;
+        }
+        .stats-row {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .projects-grid {
+          grid-template-columns: 1fr;
+        }
+        .skills-categories {
+          grid-template-columns: 1fr;
+        }
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-inner">
+        <div class="nav-logo">syedhilal.dev</div>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
-        <div class="exp-tags"><span class="tag">Architecture</span><span class="tag">Cloud Services</span><span class="tag">API Integration</span><span class="tag">Mentoring</span><span class="tag">Full-Stack</span></div>
       </div>
+    </nav>
 
-      <div class="exp-card reveal">
-        <div class="exp-card-top">
-          <div><div class="exp-role">Junior Software Engineer</div><div class="exp-company">DigitalWave Technologies · Pakistan</div></div>
-          <span class="exp-period">Dec 2023 – Dec 2024</span>
+    <!-- HERO -->
+    <div class="container">
+      <div class="hero" id="about">
+        <div class="hero-inner">
+          <div>
+            <div class="hero-badge">
+              <span class="hero-badge-dot"></span>Open to opportunities
+            </div>
+            <h1>
+              Syed Hilal Jan<span class="role"
+                >Full-Stack Software Engineer</span
+              >
+            </h1>
+            <p class="hero-bio">
+              Software Engineering graduate with 3+ years of experience building
+              scalable web and mobile applications. Strong at translating
+              business needs into technical solutions with a focus on
+              performance, clean architecture, and timely delivery.
+            </p>
+            <div class="hero-meta">
+              <span class="hero-meta-item">
+                <svg
+                  width="13"
+                  height="13"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  />
+                  <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                Dir Lower, Pakistan
+              </span>
+              <span class="hero-meta-item">
+                <svg
+                  width="13"
+                  height="13"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  />
+                </svg>
+                syedhilal67@gmail.com
+              </span>
+              <span class="hero-meta-item">
+                <svg
+                  width="13"
+                  height="13"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                  />
+                </svg>
+                (+92) 323 920 5787
+              </span>
+            </div>
+            <div class="hero-actions">
+              <a href="#contact" class="btn btn-primary">Get in Touch</a>
+              <a href="#experience" class="btn btn-outline">View Experience</a>
+            </div>
+          </div>
+          <div class="hero-photo">
+            <img src="images/syedhilal.jpg" alt="Syed Hilal Jan" />
+          </div>
         </div>
-        <ul class="exp-bullets">
-          <li>Developed and maintained scalable web and mobile applications using Flutter, React, and Laravel.</li>
-          <li>Implemented RESTful APIs, database schemas, and authentication systems.</li>
-          <li>Collaborated with cross-functional teams to translate business requirements into technical solutions.</li>
-          <li>Improved application performance by optimizing queries and refactoring inefficient code.</li>
-          <li>Actively contributed to testing, deployment, and production support.</li>
-        </ul>
-        <div class="exp-tags"><span class="tag">Flutter</span><span class="tag">React</span><span class="tag">Laravel</span><span class="tag">RESTful APIs</span><span class="tag">MySQL</span></div>
-      </div>
-
-      <div class="exp-card reveal">
-        <div class="exp-card-top">
-          <div><div class="exp-role">Software Engineering Intern</div><div class="exp-company">TechNova Solutions · Pakistan</div></div>
-          <span class="exp-period">Jun 2023 – Sep 2023</span>
-        </div>
-        <ul class="exp-bullets">
-          <li>Designed and developed web and mobile application features using Flutter, JavaScript, HTML, and CSS.</li>
-          <li>Supported senior developers in debugging, testing, and optimizing application performance.</li>
-          <li>Worked with REST APIs for data integration; learned backend concepts using Firebase and MySQL.</li>
-          <li>Participated in code reviews, sprint meetings, and Agile development practices.</li>
-          <li>Gained hands-on experience in Git/GitHub and the full software development lifecycle (SDLC).</li>
-        </ul>
-        <div class="exp-tags"><span class="tag">JavaScript</span><span class="tag">Flutter</span><span class="tag">Firebase</span><span class="tag">Agile</span><span class="tag">Git</span></div>
       </div>
     </div>
-  </section>
-</div>
 
-<!-- PROJECTS -->
-<div style="background:var(--surface);border-top:1px solid var(--border);">
-  <div class="container" id="projects">
-    <section style="background:transparent;border-top:none;">
-      <div class="section-header reveal">
-        <span class="section-num">02</span>
-        <h2 class="section-title">Projects</h2>
-      </div>
-      <div class="projects-grid">
-        <div class="project-card reveal">
-          <div class="project-icon">🛒</div>
-          <div class="project-name">E-Commerce Platform</div>
-          <p class="project-desc">Full-stack multi-vendor marketplace with real-time inventory, payment gateway integration, and an admin dashboard for order management.</p>
-          <div class="project-footer">
-            <div class="project-stack"><span class="tag">React</span><span class="tag">Laravel</span><span class="tag">MySQL</span></div>
-            <a href="#" class="project-link">View →</a>
+    <!-- STATS -->
+    <div
+      style="
+        background: var(--surface);
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+      "
+    >
+      <div class="container" style="padding: 2.5rem 2rem">
+        <div class="stats-row reveal">
+          <div class="stat">
+            <div class="stat-num">3+</div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">3</div>
+            <div class="stat-label">Companies</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">5+</div>
+            <div class="stat-label">Tech Stacks</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">BSc</div>
+            <div class="stat-label">Degree</div>
           </div>
         </div>
-        <div class="project-card reveal">
-          <div class="project-icon">📱</div>
-          <div class="project-name">Mobile Task Manager</div>
-          <p class="project-desc">Cross-platform mobile app for team task management with push notifications, offline sync, and role-based access control.</p>
-          <div class="project-footer">
-            <div class="project-stack"><span class="tag">Flutter</span><span class="tag">Firebase</span><span class="tag">REST API</span></div>
-            <a href="#" class="project-link">View →</a>
-          </div>
-        </div>
-        <div class="project-card reveal">
-          <div class="project-icon">📊</div>
-          <div class="project-name">Analytics Dashboard</div>
-          <p class="project-desc">Real-time data visualization dashboard integrating third-party analytics APIs with filterable charts and exportable reports.</p>
-          <div class="project-footer">
-            <div class="project-stack"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">Chart.js</span></div>
-            <a href="#" class="project-link">View →</a>
-          </div>
-        </div>
-        <div class="project-card reveal">
-          <div class="project-icon">🔐</div>
-          <div class="project-name">Auth & User Management</div>
-          <p class="project-desc">Reusable authentication system with JWT, OAuth2, multi-factor authentication, and session management for enterprise apps.</p>
-          <div class="project-footer">
-            <div class="project-stack"><span class="tag">Laravel</span><span class="tag">JWT</span><span class="tag">MySQL</span></div>
-            <a href="#" class="project-link">View →</a>
-          </div>
-        </div>
-        <div class="project-card reveal">
-          <div class="project-icon">🌐</div>
-          <div class="project-name">CMS WordPress Plugin</div>
-          <p class="project-desc">Custom WordPress plugin for dynamic content management, SEO optimization, and integration with external data sources via API.</p>
-          <div class="project-footer">
-            <div class="project-stack"><span class="tag">WordPress</span><span class="tag">PHP</span><span class="tag">JS</span></div>
-            <a href="#" class="project-link">View →</a>
-          </div>
-        </div>
-        <div class="project-card reveal">
-          <div class="project-icon">🔗</div>
-          <div class="project-name">Salesforce Integration</div>
-          <p class="project-desc">API bridge connecting a Laravel backend with Salesforce CRM, automating lead syncing, contact updates, and activity logging.</p>
-          <div class="project-footer">
-            <div class="project-stack"><span class="tag">Salesforce</span><span class="tag">Laravel</span><span class="tag">REST API</span></div>
-            <a href="#" class="project-link">View →</a>
-          </div>
-        </div>
-      </div>
-      <p style="font-size:0.75rem;color:var(--text-muted);margin-top:1rem;font-family:'JetBrains Mono',monospace;">* Placeholder cards — replace with your real projects.</p>
-    </section>
-  </div>
-</div>
-
-<!-- SKILLS -->
-<div class="container" id="skills">
-  <section>
-    <div class="section-header reveal">
-      <span class="section-num">03</span>
-      <h2 class="section-title">Skills & Technologies</h2>
-    </div>
-    <div class="skills-categories reveal">
-      <div class="skill-group">
-        <div class="skill-group-title">Frontend</div>
-        <div class="skill-pills"><span class="skill-pill">React</span><span class="skill-pill">JavaScript</span><span class="skill-pill">HTML5</span><span class="skill-pill">CSS3</span><span class="skill-pill">Bootstrap</span><span class="skill-pill">jQuery</span></div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-group-title">Mobile & Backend</div>
-        <div class="skill-pills"><span class="skill-pill">Flutter</span><span class="skill-pill">Laravel</span><span class="skill-pill">RESTful APIs</span><span class="skill-pill">Firebase</span><span class="skill-pill">MySQL</span><span class="skill-pill">API Integrations</span></div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-group-title">Tools & Platforms</div>
-        <div class="skill-pills"><span class="skill-pill">Git</span><span class="skill-pill">GitHub</span><span class="skill-pill">WordPress</span><span class="skill-pill">Salesforce</span><span class="skill-pill">Microsoft Office</span><span class="skill-pill">Cloud Services</span></div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-group-title">Practices</div>
-        <div class="skill-pills"><span class="skill-pill">Full-Stack Dev</span><span class="skill-pill">OOP</span><span class="skill-pill">Agile / Scrum</span><span class="skill-pill">SDLC</span><span class="skill-pill">Code Review</span><span class="skill-pill">System Architecture</span></div>
       </div>
     </div>
-  </section>
-</div>
 
-<!-- EDUCATION -->
-<div style="background:var(--surface);border-top:1px solid var(--border);">
-  <div class="container" id="education">
-    <section style="background:transparent;border-top:none;">
-      <div class="section-header reveal">
-        <span class="section-num">04</span>
-        <h2 class="section-title">Education</h2>
-      </div>
-      <div class="edu-card reveal">
-        <div class="edu-badge">🎓</div>
-        <div>
-          <div class="edu-degree">Bachelor of Science in Software Engineering</div>
-          <div class="edu-school">University of Malakand</div>
-          <div class="edu-meta">Oct 2019 – Oct 2023 &nbsp;·&nbsp; Dir Lower, KPK, Pakistan &nbsp;·&nbsp; EQF Level 6</div>
+    <!-- EXPERIENCE -->
+    <div class="container" id="experience">
+      <section>
+        <div class="section-header reveal">
+          <span class="section-num">01</span>
+          <h2 class="section-title">Work Experience</h2>
         </div>
-      </div>
-    </section>
-  </div>
-</div>
+        <div class="exp-list">
+          <div class="exp-card reveal">
+            <div class="exp-card-top">
+              <div>
+                <div class="exp-role">Software Engineer</div>
+                <div class="exp-company">Calypso Systems · Pakistan</div>
+              </div>
+              <span class="exp-period">Jan 2025 – Jan 2026</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>
+                Led development of full-stack applications, handling frontend,
+                backend, and database layers.
+              </li>
+              <li>
+                Designed system architecture with a focus on performance,
+                security, and scalability.
+              </li>
+              <li>
+                Integrated cloud services, third-party APIs, and analytics tools
+                into applications.
+              </li>
+              <li>
+                Mentored junior developers and ensured adherence to coding
+                standards and best practices.
+              </li>
+              <li>
+                Worked closely with product managers to deliver features aligned
+                with user and business needs.
+              </li>
+            </ul>
+            <div class="exp-tags">
+              <span class="tag">Architecture</span
+              ><span class="tag">Cloud Services</span
+              ><span class="tag">API Integration</span
+              ><span class="tag">Mentoring</span
+              ><span class="tag">Full-Stack</span>
+            </div>
+          </div>
 
-<!-- CONTACT -->
-<div class="container" id="contact">
-  <section style="border-bottom:none;">
-    <div class="contact-grid">
-      <div class="contact-text reveal">
-        <h2>Let's build<br><span>something great.</span></h2>
-        <p>I'm currently open to new roles and freelance opportunities. Whether you have a project in mind or just want to connect — my inbox is always open.</p>
-        <a href="mailto:syedhilal67@gmail.com" class="btn btn-primary">Send Email</a>
-      </div>
-      <div class="contact-links reveal">
-        <a href="mailto:syedhilal67@gmail.com" class="contact-link">
-          <div class="contact-link-icon">✉️</div>
-          <div><div style="font-weight:500;color:var(--text);font-size:0.85rem;">Email</div><div style="font-size:0.78rem;font-family:'JetBrains Mono',monospace;">syedhilal67@gmail.com</div></div>
-        </a>
-        <a href="tel:+923239205787" class="contact-link">
-          <div class="contact-link-icon">📞</div>
-          <div><div style="font-weight:500;color:var(--text);font-size:0.85rem;">Phone</div><div style="font-size:0.78rem;font-family:'JetBrains Mono',monospace;">(+92) 323 920 5787</div></div>
-        </a>
-        <a href="https://github.com" target="_blank" class="contact-link">
-          <div class="contact-link-icon">⌥</div>
-          <div><div style="font-weight:500;color:var(--text);font-size:0.85rem;">GitHub</div><div style="font-size:0.78rem;font-family:'JetBrains Mono',monospace;">github.com/syedhilal</div></div>
-        </a>
-        <a href="https://linkedin.com" target="_blank" class="contact-link">
-          <div class="contact-link-icon">💼</div>
-          <div><div style="font-weight:500;color:var(--text);font-size:0.85rem;">LinkedIn</div><div style="font-size:0.78rem;font-family:'JetBrains Mono',monospace;">linkedin.com/in/syedhilal</div></div>
-        </a>
+          <div class="exp-card reveal">
+            <div class="exp-card-top">
+              <div>
+                <div class="exp-role">Junior Software Engineer</div>
+                <div class="exp-company">
+                  DigitalWave Technologies · Pakistan
+                </div>
+              </div>
+              <span class="exp-period">Dec 2023 – Dec 2024</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>
+                Developed and maintained scalable web and mobile applications
+                using Flutter, React, and Laravel.
+              </li>
+              <li>
+                Implemented RESTful APIs, database schemas, and authentication
+                systems.
+              </li>
+              <li>
+                Collaborated with cross-functional teams to translate business
+                requirements into technical solutions.
+              </li>
+              <li>
+                Improved application performance by optimizing queries and
+                refactoring inefficient code.
+              </li>
+              <li>
+                Actively contributed to testing, deployment, and production
+                support.
+              </li>
+            </ul>
+            <div class="exp-tags">
+              <span class="tag">Flutter</span><span class="tag">React</span
+              ><span class="tag">Laravel</span
+              ><span class="tag">RESTful APIs</span
+              ><span class="tag">MySQL</span>
+            </div>
+          </div>
+
+          <div class="exp-card reveal">
+            <div class="exp-card-top">
+              <div>
+                <div class="exp-role">Software Engineering Intern</div>
+                <div class="exp-company">TechNova Solutions · Pakistan</div>
+              </div>
+              <span class="exp-period">Jun 2023 – Sep 2023</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>
+                Designed and developed web and mobile application features using
+                Flutter, JavaScript, HTML, and CSS.
+              </li>
+              <li>
+                Supported senior developers in debugging, testing, and
+                optimizing application performance.
+              </li>
+              <li>
+                Worked with REST APIs for data integration; learned backend
+                concepts using Firebase and MySQL.
+              </li>
+              <li>
+                Participated in code reviews, sprint meetings, and Agile
+                development practices.
+              </li>
+              <li>
+                Gained hands-on experience in Git/GitHub and the full software
+                development lifecycle (SDLC).
+              </li>
+            </ul>
+            <div class="exp-tags">
+              <span class="tag">JavaScript</span><span class="tag">Flutter</span
+              ><span class="tag">Firebase</span><span class="tag">Agile</span
+              ><span class="tag">Git</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- PROJECTS -->
+    <div
+      style="background: var(--surface); border-top: 1px solid var(--border)"
+    >
+      <div class="container" id="projects">
+        <section style="background: transparent; border-top: none">
+          <div class="section-header reveal">
+            <span class="section-num">02</span>
+            <h2 class="section-title">Projects</h2>
+          </div>
+          <div class="projects-grid">
+            <div class="project-card reveal">
+              <div class="project-icon">🛒</div>
+              <div class="project-name">E-Commerce Platform</div>
+              <p class="project-desc">
+                Full-stack multi-vendor marketplace with real-time inventory,
+                payment gateway integration, and an admin dashboard for order
+                management.
+              </p>
+              <div class="project-footer">
+                <div class="project-stack">
+                  <span class="tag">React</span><span class="tag">Laravel</span
+                  ><span class="tag">MySQL</span>
+                </div>
+                <a href="#" class="project-link">View →</a>
+              </div>
+            </div>
+            <div class="project-card reveal">
+              <div class="project-icon">📱</div>
+              <div class="project-name">Mobile Task Manager</div>
+              <p class="project-desc">
+                Cross-platform mobile app for team task management with push
+                notifications, offline sync, and role-based access control.
+              </p>
+              <div class="project-footer">
+                <div class="project-stack">
+                  <span class="tag">Flutter</span
+                  ><span class="tag">Firebase</span
+                  ><span class="tag">REST API</span>
+                </div>
+                <a href="#" class="project-link">View →</a>
+              </div>
+            </div>
+            <div class="project-card reveal">
+              <div class="project-icon">📊</div>
+              <div class="project-name">Analytics Dashboard</div>
+              <p class="project-desc">
+                Real-time data visualization dashboard integrating third-party
+                analytics APIs with filterable charts and exportable reports.
+              </p>
+              <div class="project-footer">
+                <div class="project-stack">
+                  <span class="tag">React</span><span class="tag">Node.js</span
+                  ><span class="tag">Chart.js</span>
+                </div>
+                <a href="#" class="project-link">View →</a>
+              </div>
+            </div>
+            <div class="project-card reveal">
+              <div class="project-icon">🔐</div>
+              <div class="project-name">Auth & User Management</div>
+              <p class="project-desc">
+                Reusable authentication system with JWT, OAuth2, multi-factor
+                authentication, and session management for enterprise apps.
+              </p>
+              <div class="project-footer">
+                <div class="project-stack">
+                  <span class="tag">Laravel</span><span class="tag">JWT</span
+                  ><span class="tag">MySQL</span>
+                </div>
+                <a href="#" class="project-link">View →</a>
+              </div>
+            </div>
+            <div class="project-card reveal">
+              <div class="project-icon">🌐</div>
+              <div class="project-name">CMS WordPress Plugin</div>
+              <p class="project-desc">
+                Custom WordPress plugin for dynamic content management, SEO
+                optimization, and integration with external data sources via
+                API.
+              </p>
+              <div class="project-footer">
+                <div class="project-stack">
+                  <span class="tag">WordPress</span><span class="tag">PHP</span
+                  ><span class="tag">JS</span>
+                </div>
+                <a href="#" class="project-link">View →</a>
+              </div>
+            </div>
+            <div class="project-card reveal">
+              <div class="project-icon">🔗</div>
+              <div class="project-name">Salesforce Integration</div>
+              <p class="project-desc">
+                API bridge connecting a Laravel backend with Salesforce CRM,
+                automating lead syncing, contact updates, and activity logging.
+              </p>
+              <div class="project-footer">
+                <div class="project-stack">
+                  <span class="tag">Salesforce</span
+                  ><span class="tag">Laravel</span
+                  ><span class="tag">REST API</span>
+                </div>
+                <a href="#" class="project-link">View →</a>
+              </div>
+            </div>
+          </div>
+          <p
+            style="
+              font-size: 0.75rem;
+              color: var(--text-muted);
+              margin-top: 1rem;
+              font-family: &quot;JetBrains Mono&quot;, monospace;
+            "
+          >
+            * Placeholder cards — replace with your real projects.
+          </p>
+        </section>
       </div>
     </div>
-  </section>
-</div>
 
-<footer>Syed Hilal Jan &nbsp;·&nbsp; Software Engineer &nbsp;·&nbsp; Dir Lower, Pakistan &nbsp;·&nbsp; 2025</footer>
+    <!-- SKILLS -->
+    <div class="container" id="skills">
+      <section>
+        <div class="section-header reveal">
+          <span class="section-num">03</span>
+          <h2 class="section-title">Skills & Technologies</h2>
+        </div>
+        <div class="skills-categories reveal">
+          <div class="skill-group">
+            <div class="skill-group-title">Frontend</div>
+            <div class="skill-pills">
+              <span class="skill-pill">React</span
+              ><span class="skill-pill">JavaScript</span
+              ><span class="skill-pill">HTML5</span
+              ><span class="skill-pill">CSS3</span
+              ><span class="skill-pill">Bootstrap</span
+              ><span class="skill-pill">jQuery</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <div class="skill-group-title">Mobile & Backend</div>
+            <div class="skill-pills">
+              <span class="skill-pill">Flutter</span
+              ><span class="skill-pill">Laravel</span
+              ><span class="skill-pill">RESTful APIs</span
+              ><span class="skill-pill">Firebase</span
+              ><span class="skill-pill">MySQL</span
+              ><span class="skill-pill">API Integrations</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <div class="skill-group-title">Tools & Platforms</div>
+            <div class="skill-pills">
+              <span class="skill-pill">Git</span
+              ><span class="skill-pill">GitHub</span
+              ><span class="skill-pill">WordPress</span
+              ><span class="skill-pill">Salesforce</span
+              ><span class="skill-pill">Microsoft Office</span
+              ><span class="skill-pill">Cloud Services</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <div class="skill-group-title">Practices</div>
+            <div class="skill-pills">
+              <span class="skill-pill">Full-Stack Dev</span
+              ><span class="skill-pill">OOP</span
+              ><span class="skill-pill">Agile / Scrum</span
+              ><span class="skill-pill">SDLC</span
+              ><span class="skill-pill">Code Review</span
+              ><span class="skill-pill">System Architecture</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
 
-<script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-</script>
-</body>
+    <!-- EDUCATION -->
+    <div
+      style="background: var(--surface); border-top: 1px solid var(--border)"
+    >
+      <div class="container" id="education">
+        <section style="background: transparent; border-top: none">
+          <div class="section-header reveal">
+            <span class="section-num">04</span>
+            <h2 class="section-title">Education</h2>
+          </div>
+          <div class="edu-card reveal">
+            <div class="edu-badge">🎓</div>
+            <div>
+              <div class="edu-degree">
+                Bachelor of Science in Software Engineering
+              </div>
+              <div class="edu-school">University of Malakand</div>
+              <div class="edu-meta">
+                Oct 2019 – Oct 2023 &nbsp;·&nbsp; Dir Lower, KPK, Pakistan
+                &nbsp;·&nbsp; EQF Level 6
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="container" id="contact">
+      <section style="border-bottom: none">
+        <div class="contact-grid">
+          <div class="contact-text reveal">
+            <h2>Let's build<br /><span>something great.</span></h2>
+            <p>
+              I'm currently open to new roles and freelance opportunities.
+              Whether you have a project in mind or just want to connect — my
+              inbox is always open.
+            </p>
+            <a href="mailto:syedhilal67@gmail.com" class="btn btn-primary"
+              >Send Email</a
+            >
+          </div>
+          <div class="contact-links reveal">
+            <a href="mailto:syedhilal67@gmail.com" class="contact-link">
+              <div class="contact-link-icon">✉️</div>
+              <div>
+                <div
+                  style="
+                    font-weight: 500;
+                    color: var(--text);
+                    font-size: 0.85rem;
+                  "
+                >
+                  Email
+                </div>
+                <div
+                  style="
+                    font-size: 0.78rem;
+                    font-family: &quot;JetBrains Mono&quot;, monospace;
+                  "
+                >
+                  syedhilal67@gmail.com
+                </div>
+              </div>
+            </a>
+            <a href="tel:+923239205787" class="contact-link">
+              <div class="contact-link-icon">📞</div>
+              <div>
+                <div
+                  style="
+                    font-weight: 500;
+                    color: var(--text);
+                    font-size: 0.85rem;
+                  "
+                >
+                  Phone
+                </div>
+                <div
+                  style="
+                    font-size: 0.78rem;
+                    font-family: &quot;JetBrains Mono&quot;, monospace;
+                  "
+                >
+                  (+92) 323 920 5787
+                </div>
+              </div>
+            </a>
+            <a href="https://github.com" target="_blank" class="contact-link">
+              <div class="contact-link-icon">⌥</div>
+              <div>
+                <div
+                  style="
+                    font-weight: 500;
+                    color: var(--text);
+                    font-size: 0.85rem;
+                  "
+                >
+                  GitHub
+                </div>
+                <div
+                  style="
+                    font-size: 0.78rem;
+                    font-family: &quot;JetBrains Mono&quot;, monospace;
+                  "
+                >
+                  github.com/syedhilal
+                </div>
+              </div>
+            </a>
+            <a href="https://linkedin.com" target="_blank" class="contact-link">
+              <div class="contact-link-icon">💼</div>
+              <div>
+                <div
+                  style="
+                    font-weight: 500;
+                    color: var(--text);
+                    font-size: 0.85rem;
+                  "
+                >
+                  LinkedIn
+                </div>
+                <div
+                  style="
+                    font-size: 0.78rem;
+                    font-family: &quot;JetBrains Mono&quot;, monospace;
+                  "
+                >
+                  linkedin.com/in/syedhilal
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      Syed Hilal Jan &nbsp;·&nbsp; Software Engineer &nbsp;·&nbsp; Dir Lower,
+      Pakistan &nbsp;·&nbsp; 2025
+    </footer>
+
+    <script>
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) e.target.classList.add("visible");
+          });
+        },
+        { threshold: 0.08, rootMargin: "0px 0px -30px 0px" },
+      );
+      document
+        .querySelectorAll(".reveal")
+        .forEach((el) => observer.observe(el));
+    </script>
+  </body>
 </html>
